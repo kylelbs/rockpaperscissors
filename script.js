@@ -1,30 +1,44 @@
-console.log("Hello world !")
+console.log("Hello world !");
 
 function computerPlay(){
-    values = ["Rock", "Paper", "Scissors"]
-    random_number = Math.floor(Math.random() * 3)
-    return values[random_number]
-}
+    values = ["Rock", "Paper", "Scissors"];
+    random_number = Math.floor(Math.random() * 3);
+    return values[random_number];
+};
 
 function playRound(user1, user2){
     if (user1 == "Rock" && user2 == "Rock" || user1 == "Paper" && user2 == "Paper" || user1 == "Scissors" && user2 == "Scissors"){
-        return "tie"
+        return 2;
     }
     else if (user1 == "Rock" && user2 == "Scissors" || user1 == "Paper" && user2 == "Rock" || user1 == "Scissors" && user2 == "Paper"){
-        return "win"
+        return 1;
     }
     else {
-        return "loose"
+        return 0;
     }
-}
+};
 
 function game(){
+    let computerScore = 0;
+    let userScore = 0;
     for (let i= 0; i<5; i++) {
         result = playRound(userSelection, computerSelection)
-        if 
+        if (result == 1) {
+            userScore++;
+            console.log("You won ! +1 point")
+        }
+        else if (result == 0) {
+            computerScore++;
+            console.log("You loose ! +1 point for computer")
+        }
+        else if (result == 2) {
+            console.log("Tie !")
+        }
     }
-}
+    console.log("End ! The result are : ${computerScore} for computer and ${userScore} for you.")
+};
 
-userSelection = prompt("Rock, Paper or Scissors ?: ")
-computerSelection = computerPlay()
-playRound(userSelection, computerSelection)
+userSelection = prompt("Rock, Paper or Scissors ?: ");
+computerSelection = computerPlay();
+game();
+
