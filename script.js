@@ -15,30 +15,30 @@ function playRound(user1, user2){
     }
     else {
         return 0;
-    }
+    };
 };
 
 function game(){
     let computerScore = 0;
     let userScore = 0;
     for (let i= 0; i<5; i++) {
-        result = playRound(userSelection, computerSelection)
+        userSelection = prompt("Rock, Paper or Scissors ?: ");
+        computerSelection = computerPlay();
+        result = playRound(userSelection, computerSelection);
         if (result == 1) {
             userScore++;
-            console.log("You won ! +1 point")
+            console.log("You won ! +1 point");
         }
         else if (result == 0) {
             computerScore++;
-            console.log("You loose ! +1 point for computer")
+            console.log("You loose ! +1 point for computer");
         }
-        else if (result == 2) {
-            console.log("Tie !")
-        }
-    }
-    console.log("End ! The result are : ${computerScore} for computer and ${userScore} for you.")
+        else {
+            console.log("Tie !");
+        };
+    };
+    console.log(`End ! The result are : ${computerScore} for computer and ${userScore} for you.`);
 };
 
-userSelection = prompt("Rock, Paper or Scissors ?: ");
-computerSelection = computerPlay();
 game();
 
