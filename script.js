@@ -37,7 +37,13 @@ function game() {
             console.log("Tie !");
         };
     };
-    console.log(`End ! The result are : ${computerScore} for computer and ${userScore} for you.`);
+    if (computerScore > userScore) {
+        console.log(`You loose, sorry ! The result are : ${computerScore} for computer and ${userScore} for you.`);
+    }
+    else {
+        console.log(`You won, congratulations ! The result are : ${computerScore} for computer and ${userScore} for you.`);
+    }
+
 };
 
 game();
